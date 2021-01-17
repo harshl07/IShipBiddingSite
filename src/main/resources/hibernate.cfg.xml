@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-5.0.dtd ">
+    
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/IShip</property>
+        <property name="connection.username"></property>
+        <property name="connection.password"></property>
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">100</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+		<property name="hibernate.hbm2ddl.auto">update</property> 
+        <!-- Mapping files -->
+        <mapping class="com.demo.bean.Auction"/>
+	 	<mapping class="com.demo.bean.User"/>
+      	<mapping class="com.demo.bean.Customer"/>
+      	<mapping class="com.demo.bean.Shipper"/> 
+      	<mapping class="com.demo.bean.ShippingLoad"/>
+      	<mapping class="com.demo.bean.Item"/>
+      	<mapping class="com.demo.bean.Bid"/> 
+    
+    </session-factory>
+</hibernate-configuration>
